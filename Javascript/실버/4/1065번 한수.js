@@ -44,7 +44,7 @@ function countHansu(inputNum) {
       count += 1;
     }
   }
-  console.log(count);
+  console.log(count); // 한수 개수 출력
 }
 
 // 함수 호출
