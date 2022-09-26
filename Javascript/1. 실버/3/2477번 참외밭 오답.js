@@ -41,12 +41,12 @@ const chamwheNum = input[0];
 const lines = input.slice(1, 7);
 let index = 0;
 
-// 데이터를 배열 안의 배열로 변환 및 정수로 변환해서 할당 [ [4, 50], [2, 160] ]
+// 데이터를 배열 안의 배열로 변환 및 정수로 변환해서 할당 [ "4 50", [2, 160] ]
 for (line of lines) {
   lines[index] = line.split(" ").map((data) => parseInt(data));
   index++;
 }
-// console.log(lines);
+console.log(lines);
 
 // 가로 세로 최대 길이 변수 선언
 let northSouth = 0;
@@ -58,16 +58,16 @@ for (let index = 0; index < lines.length; index++) {
 
   // 동서와 남북을 나눠서 더하기
   if (direction === 1 || direction === 2) {
-    // console.log("동 or 서");
+    console.log("동 or 서");
     eastWest += distance;
   } else {
-    // console.log("남 or 북");
+    console.log("남 or 북");
     northSouth += distance;
   }
 }
 // 최대 사각형 넓이
 const areaNum = (northSouth / 2) * (eastWest / 2);
-// console.log(northSouth / 2, eastWest / 2, areaNum);
+console.log(northSouth / 2, eastWest / 2, areaNum);
 
 // 넓이를 빼줄 horizontalLine, verticalLine 선언
 let horizontalLine = 0;
@@ -85,14 +85,14 @@ for (let index = 0; index < lines.length; index++) {
   afterLine = lines[index % 6];
 
   if (beforeLineBackup[0] === afterLine[0]) {
-    // console.log("반복되는 것 찾음!");
-    // console.log(
-    //   afterLineBackup[1],
-    //   "x",
-    //   afterLine[1],
-    //   "=",
-    //   afterLineBackup[1] * afterLine[1]
-    // );
+    console.log("반복되는 것 찾음!");
+    console.log(
+      afterLineBackup[1],
+      "x",
+      afterLine[1],
+      "=",
+      afterLineBackup[1] * afterLine[1]
+    );
     horizontalLine = afterLineBackup[1];
     verticalLine = afterLine[1];
     break;
