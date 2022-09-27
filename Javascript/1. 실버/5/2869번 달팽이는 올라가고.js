@@ -15,12 +15,28 @@ const input = fs
   .trim()
   .split(" ")
   .map((data) => parseInt(data));
-// console.log(input);
 
 // 값 각각 할당
-let [A, B, V] = input;
+let [up, down, height] = input;
 
-// 달팽이가 V에 도달하는지 체크하기 위한 finished, count 선언
-const answer = parseInt((V - A) * (A - B) + 1);
+// 하루 동안 올라가는 길이 = up - down
+// height - down을 통해 더 올라가는지 체크
+// 최소 이동 일수 day 도출
+let day = (height - down) / (up - down);
 
-console.log(answer);
+// 나머지가 있는 경우 (잔여 블럭이 있는 경우)
+if ((height - down) % (up - down) !== 0) {
+  day++;
+}
+
+console.log(parseInt(day)); // 정수 변환
+
+// 참고 - https://st-lab.tistory.com/75
+
+// 설명
+// ---------------------------------------------------------------
+// - 그림을 이용해 예제를 만들어 패턴을 파악해 2 가지 경우를 도출
+// - 미끄러지지 않는다 -> 조건에 따른 2가지 경우
+// ( length - down ) % ( up - down ) 가 정확하게 0 으로 떨어지는 경우
+// ( length - down ) % ( up - down ) 가 나머지가 남는 경우 (잔여 블럭)
+// ---------------------------------------------------------------
