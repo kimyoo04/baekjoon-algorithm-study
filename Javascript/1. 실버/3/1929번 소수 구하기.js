@@ -1,3 +1,5 @@
+// https://www.acmicpc.net/problem/1929
+
 const fs = require("fs");
 const [A, B] = fs
   .readFileSync("./Javascript/# txt/1929번 소수 구하기.txt")
@@ -12,12 +14,12 @@ const [A, B] = fs
 const numList = [];
 const primeList = [];
 
-for (let i = 0; i < B + 1; i++) {
+for (let i = 0; i <= B; i++) {
   numList.push(true);
 }
 
 // A -> B 까지 소수인지 판별
-for (let num = 2; num <= B + 1; num++) {
+for (let num = 2; num <= B; num++) {
   // 일단 true 인 경우
   if (numList[num]) {
     // A 보다 크고 B 보다 작은 경우 소수리스트에 저장 (작은 수부터 저장됨)
