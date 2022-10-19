@@ -1,3 +1,4 @@
-**/test/
 **/# txt
 **/# 입출력 방식
+**/test
+.vscode/
